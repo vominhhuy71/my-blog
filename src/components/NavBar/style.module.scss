@@ -1,0 +1,28 @@
+.nav_bar {
+  &__container {
+    height: 3rem;
+
+    padding: 20px 100px;
+    background-color: #f9fafa;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font: normal normal normal 16px/1.4em sans-serif;
+    cursor: pointer;
+  }
+
+  &__btns {
+    width: 400px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font: 700 normal normal 15px/3em sans-serif;
+
+    cursor: pointer;
+  }
+}
