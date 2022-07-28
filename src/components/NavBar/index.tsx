@@ -1,9 +1,18 @@
+import i18next, { changeLanguage } from 'i18next';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import style from './style.module.scss';
 
 const NavBar = () => {
   const navigate = useNavigate();
+
+  const changeLanguageBtn = (e: any) => {
+    e.preventDefault();
+
+    const currentLanguage = i18next.language || window.localStorage.i18nextLng;
+    if (currentLanguage === 'en') changeLanguage('vn');
+    else changeLanguage('en');
+  };
 
   return (
     <div className={style.nav_bar__container}>
@@ -23,6 +32,9 @@ const NavBar = () => {
           onClick={() => navigate('/playground')}
         >
           Playground
+        </div>
+        <div className={style.nav_bar__btn} onClick={changeLanguageBtn}>
+          VN/EN
         </div>
       </div>
     </div>
